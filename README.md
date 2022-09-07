@@ -1,7 +1,7 @@
 # heavenonline
-This is the framework I use for my website, [heavenonline.xyz.](https://heavenonline.xyz/)
-Some demo pages and some admittedly lacking documentation in the form of readme files is also included.
-I'd like to write some better documentation eventually.
+This is the framework I use for my website, [heavenonline.xyz.](https://heavenonline.xyz/)  
+Some demo pages and some admittedly lacking documentation in the form of readme files is also included.  
+I'd like to write some better documentation eventually.  
 You are free to do as you please with any and all of this, so long as attribution is provided.
 
 # Effect scripts
