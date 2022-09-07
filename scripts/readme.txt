@@ -1,0 +1,1 @@
+When loading a page, a script in this directory with the same name as the page's HTML file is checked for, and ran if found.

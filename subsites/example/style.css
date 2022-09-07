@@ -1,0 +1,5 @@
+hr {
+	background: repeating-linear-gradient(to right, #00FFFF, #FF5000, #00FFFF);
+	background-size: 400% 400%;
+	animation-direction: reverse;
+}

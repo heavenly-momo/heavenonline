@@ -1,0 +1,920 @@
+/*
+	This is the core stylesheet.
+	It includes site-wide style and the style of the core site.
+*/
+
+/*
+	The basics, mostly.
+*/
+
+@font-face {
+	font-family: ms_mincho;
+	src: url(/core/font.woff);
+}
+
+body,
+.popup,
+.tooltiptext,
+#outerCircleText div div {
+	text-align: center;
+}
+
+body,
+::-webkit-scrollbar-corner,
+.popup,
+.boxset.boximg {
+	background: #000000;
+}
+
+body,
+.box {
+	font-family: ms_mincho;
+	font-size: 20px;
+}
+
+body,
+.nomargin,
+.colors > p,
+.center,
+.centerh, 
+.centerv,
+.movingtext {
+	margin: 0;
+}
+
+::selection,
+.popup {
+	text-shadow: none;
+}
+
+a,
+img {
+	-webkit-user-drag: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img,
+.popup,
+.p.hueshift,
+.gradienttext,
+.movingtext,
+#matrix,
+#wave {
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+/*
+	The scrollbar.
+*/
+
+::-webkit-scrollbar {	
+	width: 10px;
+	height: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: #000000;
+}
+
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-corner {
+	background: #545454;
+	border: solid 2px #000000;
+}
+
+/*
+	Audio controls.
+*/
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+	font-weight: bold;
+	text-shadow: none;
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-options-button,
+audio::-webkit-media-controls-mute-button {
+	background-color: rgba(0, 0, 0, 0.25);
+	border-radius: 50%;
+}
+
+audio::-webkit-media-controls-play-button:hover,
+audio::-webkit-media-controls-mute-button:hover {
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+/*
+	The page preloader; the loading screen and possible popups.
+*/
+
+.popup {
+	font-family: Times New Roman;
+	font-size: 16px;
+	color: #DBDBBE;
+	overflow-y: scroll;
+	scrollbar-width: none;
+}
+
+#audiocover {
+	z-index: 10000;
+}
+
+#checkcover {
+	z-index: 10001;
+}
+
+.audioimg {
+	top: 280px;
+}
+
+.audiotext {
+	top: 490px;
+}
+
+.checkimg {
+	top: 180px;
+}
+
+.checktext {
+	top: 540px;
+}
+
+/*
+	Alternate line breaks.
+*/
+
+.p.xsbreak {
+	margin-top: -20px;
+}
+
+.p.sbreak {
+	margin-top: -12px;
+}
+
+.p.lbreak {
+	margin-top: 50px;
+}
+
+/*
+	Boxes, tooltips, the return button,
+	and other things positioned relatively.
+*/
+
+body,
+.boxset,
+.tooltip,
+#outerCircleText div,
+.movingtext {
+	position: relative;
+}
+
+.boxset,
+.tooltiptext,
+.return {
+	background: rgba(0, 0, 0, 0.9);
+}
+
+.boxset,
+#matrix {
+	width: 800px;
+}
+
+.boxset,
+.return {
+	z-index: 100;
+}
+
+.boxset {
+	margin: auto;
+	margin-top: 60px;
+	margin-bottom: 60px;
+	padding-top: 20px;
+	padding-bottom: 30px;
+}
+
+.boxset.boximg,
+.tooltiptext {
+	width: max-content;
+}
+
+.boxset.boximg {
+	padding: 0;
+}
+
+.boximg > .img,
+.boximg > div,
+.boximg > a > .img,
+.boximg > a > div {
+	box-shadow: 0 0 6px 6px rgba(0, 0, 0, 0.75) inset;
+}
+
+.tooltiptext {
+	z-index: 101;
+	padding-top: 12px;
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+.tooltiptext {
+	opacity: 0;
+	transition: 1s;
+}
+
+.tooltip:hover .tooltiptext {
+	opacity: 1;
+}
+
+.returntl,
+.returnbl {
+	left: 32px;
+}
+
+.returntr,
+.returnbr {
+	right: 32px;
+}
+
+.returntl,
+.returntr {
+	top: 32px;
+}
+
+.returnbl,
+.returnbr {
+	bottom: 32px;
+}
+
+.return,
+.returnimg {
+	width: 126px;
+	height: 94px;
+}
+
+/*
+	For dialog boxes.
+*/
+
+.dialogboxl > .p,
+.dialogboxl > .runes {
+	text-align: left;
+	padding-left: 30px;
+}
+
+.dialogboxr > .p,
+.dialogboxr > .runes {
+	text-align: right;
+	padding-right: 30px;
+}
+
+.dialogboxl > div:first-of-type {
+	margin-right: 480px;
+}
+
+.dialogboxr > div:first-of-type {
+	margin-left: 480px;
+}
+
+/*
+	The horizontal lines seen on the boxes.
+*/
+
+hr {
+	background: repeating-linear-gradient(to right, #FF0000, #00FF00, #FF0000);
+	background-size: 400% 400%;
+	height: 2px;
+	border-width: 0;
+	box-shadow: -64px 0 64px -48px #000000 inset, 64px 0 64px -48px #000000 inset;
+	animation-duration: 2s;
+}
+
+@keyframes hr { 
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 3200px 0;
+	}
+}
+
+/*
+	Spacing things out properly, including edge cases.
+*/
+
+hr,
+.p,
+.runes {
+	margin-bottom: 30px;
+}
+
+.p,
+.runes {
+	margin-top: 30px;
+}
+
+hr + .p,
+hr + .runes,
+.img + .runes {
+	margin-top: 32px;
+}
+
+.img + hr,
+.runes + hr {
+	margin-top: 37px;
+}
+
+.img + .p {
+	margin-top: 29px;
+}
+
+.runes + .img {
+	margin-top: 5px;
+}
+
+hr + .img {
+	margin-top: 10px;
+}
+
+hr:last-child {
+	margin-bottom: 0;
+}
+
+.boxset:not(.boximg) > .img:first-child {
+	margin-top: 40px;
+}
+
+.boxset:not(.boximg) > .img:last-child,
+.boxset:not(.boximg) > .runes:last-child,
+.wavebreak {
+	margin-bottom: 32px;
+}
+
+.box + .box:not(.boxfree, .boxbreak) {
+	margin-top: 100px;
+}
+
+.box + .sbox:not(.boxfree, .boxbreak),
+.sbox + .box:not(.boxfree, .boxbreak),
+.sbox + .sbox:not(.boxfree, .boxbreak) {
+	margin-top: 80px;
+}
+
+.hotbar.p {
+	margin-top: -18px;
+}
+
+.hotbar.istw {
+	margin-top: -15px;
+}
+
+.overbox {
+	margin-bottom: -5px;
+}
+
+.nomargint,
+.overbox + .boxset {
+	margin-top: 0;
+}
+
+.nomarginb {
+	margin-bottom: 0;
+}
+
+.boxbreak {
+	margin-top: 240px;
+}
+
+.img + audio {
+	margin-top: 40px;
+}
+
+.freebgbox,
+.freebgboxt {
+	padding-top: 60px;
+}
+
+.freebgbox,
+.freebgboxb {
+	padding-bottom: 60px;
+}
+
+/*
+	Some damned nonsense involving text highlighting.
+*/
+
+.colors > p {
+	display: inline;
+}
+
+/*
+	Things that (usually) aren't in a box, but also not
+	part of the background, as well as other things positioned absolutely.
+*/
+
+.set,
+.setx,
+.setov,
+.bgfree,
+.bgfreex,
+.bgfreeov,
+.tooltiptext,
+#outerCircleText,
+#outerCircleText div div,
+.floating,
+.movingtext > span,
+.spinsphere:before {
+	position: absolute;
+}
+
+.img,
+.set,
+.setx,
+.setov,
+.sticky,
+.stickyx,
+.stickyov,
+.d,
+.tw,
+.movingtext,
+.runespace {
+	display: inline-block;
+}
+
+/*
+	For page backgrounds and popups.
+*/
+
+.bg,
+.bgx,
+.bgov,
+.bgset,
+.bgsetx,
+.bgsetov,
+.popup,
+.return:not(.set, .setx, .setov) {
+	position: fixed;
+}
+
+.bgx,
+.setx,
+.bgsetx,
+.bgfreex,
+.stickyx {
+	z-index: -1000;
+}
+
+.bgov,
+.setov,
+.bgsetov,
+.bgfreeov,
+.stickyov {
+	z-index: 200;
+}
+
+.bgov,
+.bgfreeov,
+.clickthrough {
+	pointer-events: none;
+}
+
+.popup::-webkit-scrollbar {
+	display: none;
+}
+
+.cover,
+.coverh,
+.edgel,
+.cornertl,
+.cornerbl,
+.popup,
+#outerCircleText,
+#outerCircleText div div,
+.spinsphere:before {
+	left: 0;
+}
+
+.cover,
+.coverh,
+.popup,
+.spinsphere:before {
+	width: 100%;
+}
+
+.cover,
+.coverv,
+.edget,
+.cornertl,
+.cornertr,
+.popup,
+#outerCircleText,
+#outerCircleText div div,
+.spinsphere:before {
+	top: 0;
+}
+
+.cover,
+.coverv,
+.popup,
+.spinsphere:before {
+	height: 100%;
+}
+
+.rot.cover,
+.rot.coverv,
+.rot.edgel {
+	left: -902.15%;
+}
+
+.rot.cover,
+.rot.coverh {
+	width: 2000%;
+}
+
+.rot.cover,
+.rot.coverh,
+.rot.edget {
+	top: -902.15%;
+}
+
+.rot.cover,
+.rot.coverv {
+	height: 2000%;
+}
+
+/*
+	Gradient masks.
+*/
+
+.gradmaskl {
+	-webkit-mask-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
+}
+
+.gradmaskr {
+	-webkit-mask-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
+}
+
+.gradmaskt {
+	-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
+}
+
+.gradmaskb {
+	-webkit-mask-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
+}
+
+.gradmasktl {
+	-webkit-mask-image: -webkit-gradient(linear, left top, right bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
+}
+
+.gradmasktr {
+	-webkit-mask-image: -webkit-gradient(linear, right top, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
+}
+
+.gradmaskbl {
+	-webkit-mask-image: -webkit-gradient(linear, left bottom, right top, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
+}
+
+.gradmaskbr {
+	-webkit-mask-image: -webkit-gradient(linear, right bottom, left top, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
+}
+
+/*
+	Anything sticky.
+*/
+
+.sticky,
+.stickyx,
+.stickyov {
+	position: sticky;
+}
+
+/*
+	Deciding where things go, usually background elements.
+*/
+
+.edger,
+.cornertr,
+.cornerbr {
+	right: 0;
+}
+
+.edgeb,
+.cornerbl,
+.cornerbr {
+	bottom: 0;
+}
+
+.rot.edger {
+	right: -902.15%;
+}
+
+.rot.edgeb {
+	bottom: -902.15%;
+}
+
+.center,
+.centerh {
+	left: 50%;
+}
+
+.center,
+.centerv {
+	top: 50%;
+}
+
+.center {	
+	transform: translate(-50%, -50%);
+}
+
+.centerh {
+	transform: translate(-50%, 0);
+}
+
+.centerv {
+	transform: translate(0, -50%);
+}
+
+.valign,
+.tw {
+	vertical-align: middle;
+}
+
+/*
+	Flipping and rotating.
+*/
+
+.fliph,
+.ctr {
+	transform: scaleX(-1);
+}
+
+.flipv,
+.cbl {
+	transform: scaleY(-1);
+}
+
+.rot180,
+.cbr {
+	transform: scale(-1);
+}
+
+.rotp90 {
+	transform: rotate(90deg);
+}
+
+.rotn90 {
+	transform: rotate(-90deg);
+}
+
+/*
+	Hotbar diamonds.
+*/
+
+.d {
+	width: 128px;
+	height: 20px;
+}
+
+.dl {
+	margin-right: 20px;
+}
+
+.dr {
+	margin-left: 20px;
+}
+
+/*
+	"Twinkles," for decorating certain bits of text,
+	including some hotbars.
+*/
+
+.tw {
+	height: 15px;
+	margin-bottom: 6px;
+}
+
+/*
+	Corner decorations.
+*/
+
+.ctl,
+.cbl {
+	padding-right: 640px;
+}
+
+.ctl,
+.ctr {
+	margin-top: -5px;
+}
+
+.cbl,
+.cbr {
+	margin-bottom: 12px;
+}
+
+/*
+	Whitespace for rune text.
+*/
+
+.runespace {
+	width: 32px;
+	height: 32px;
+}
+
+/*
+	Invisible text.
+*/
+
+.invisible {
+	color: rgba(0, 0, 0, 0);
+}
+
+/*
+	Filters to recolor black (#000000) to various other colors.
+	These are used for quite a few recurring images, including twinkles.
+	It's some pretty insane maths. Luckily, there is a very useful tool to calculate the filters.
+	If you are interested: https://codepen.io/sosuke/pen/Pjoqqp
+*/
+
+.white {
+	filter: invert(1) sepia(0) saturate(100%) hue-rotate(0) brightness(100%) contrast(100%);
+}
+
+.lightgray {
+	filter: invert(1) sepia(0) saturate(100%) hue-rotate(0) brightness(109%) contrast(69%);
+}
+
+.darkgray {
+	filter: invert(33%) sepia(0) saturate(310%) hue-rotate(187deg) brightness(86%) contrast(80%);
+}
+
+.red {
+	filter: invert(19%) sepia(79%) saturate(7414%) hue-rotate(357deg) brightness(109%) contrast(121%);
+}
+
+.green {
+	filter: invert(65%) sepia(89%) saturate(4528%) hue-rotate(86deg) brightness(129%) contrast(114%);
+}
+
+.blue {
+	filter: invert(8%) sepia(1) saturate(6752%) hue-rotate(247deg) brightness(99%) contrast(145%);
+}
+
+.fuchsia {
+	filter: invert(18%) sepia(76%) saturate(4230%) hue-rotate(295deg) brightness(117%) contrast(127%);
+}
+
+.cyan {
+	filter: invert(77%) sepia(93%) saturate(3909%) hue-rotate(129deg) brightness(107%) contrast(108%);
+}
+
+.orange {
+	filter: invert(45%) sepia(96%) saturate(4217%) hue-rotate(360deg) brightness(104%) contrast(108%);
+}
+
+/*
+	Anything grayscale.
+*/
+
+.monochrome {
+	filter: grayscale(1);
+}
+
+/*
+	Any animations.
+*/
+
+hr,
+.anim,
+.shanim,
+.gradienttext,
+.movingtext > span,
+.spinsphere {
+	animation-fill-mode: forwards;
+}
+
+.anim {
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+.reverse {
+	animation-direction: reverse;
+}
+
+/*
+	Misc. animations that are bound to be used in many pages.
+*/
+
+.spin {
+	animation-name: spin;
+}
+
+@keyframes spin {
+    from {
+		transform: rotate(0);
+	}
+    to {
+		transform: rotate(360deg);
+	}
+}
+
+.hueshift {
+	animation-name: hueshift;
+}
+
+.p.hueshift {
+	color: #FF0000;
+}
+
+@keyframes hueshift {
+	from {
+		filter: hue-rotate(0);
+	}
+	to {
+		filter: hue-rotate(360deg);
+	}
+}
+
+.hueshift2 {
+	animation-name: hueshift2;
+}
+
+@keyframes hueshift2 {
+	from {
+		filter: invert(19%) sepia(79%) saturate(7414%) hue-rotate(357deg) brightness(109%) contrast(121%);
+	}
+	to {
+		filter: invert(19%) sepia(79%) saturate(7414%) hue-rotate(717deg) brightness(109%) contrast(121%);
+	}
+}
+
+.gradienttext {
+	background-size: 200% 200%;
+	animation: gradienttext 1s linear infinite;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+@keyframes gradienttext { 
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: 1600px, 0;
+	}
+}
+
+.movingtext {
+	height: 4em;
+}
+
+.movingtext > span {
+	white-space: pre;
+	animation: movingtext 20s linear infinite;
+}
+
+.spinsphere,
+.spinsphere:before {
+	border-radius: 50%;
+}
+
+.spinsphere {
+	box-shadow: inset 20px 0 80px 6px #444444;
+	transition: 200ms;
+}
+
+.spinsphere:before {
+	box-shadow: -80px 15px 80px 10px #000000 inset;
+	content: "";
+}
+
+.spinsphere:after {
+	background: radial-gradient(circle at 100px 100px, #111111, #000000);
+	opacity: 0.2;
+}
+
+.groovytext {
+	animation-name: groovytext;
+	animation-duration: 950ms;
+}
+
+/*
+	For some external scripts.
+*/
+
+.movingtext,
+#matrix {
+	overflow: hidden;
+}
+
+#outerCircleText {
+	z-index: -900;
+}
+
+.floating {
+	left: -500px;
+}

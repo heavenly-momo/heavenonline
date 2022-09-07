@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head class="core noaudio singlescreen">
+		<meta charset="utf-8">
+		<meta name="author" content="someone">
+		<meta name="description" content="example pages">
+		<meta name="robots" content="index, follow">
+		<script src="/core/IEcheck.js"></script>
+		<script>
+			snowCharacter = "*"
+			snowColor = "#0000FF"
+			flakesMax = 128
+			flakesMaxActive = 128 
+			flakeWidth = 32
+			flakeHeight = 32
+			snowStick = false
+			vMaxX = 6
+			vMaxY = 6
+		</script>
+		<script>
+			starcharacter = "*"
+
+			starcolors = [
+				"#FF0000",
+				"#00FF00"
+			]
+
+			stars = 170
+			starspeed = 40
+			warp = 4
+		</script>
+		<script>
+			circletextmsg = "swoosh! i'm circling text, circling around! funny, how that works! swoosh! i'm circling text, circling around! funny, how that works! swoosh! i'm circling text, circling around! funny, how that works! swoosh! i'm circling text, circling around! funny, how that works!"
+			circletextsize = 20
+		</script>
+		<script>
+			fallingimg = "img_6.gif"
+			fallingimgcount = 6
+			fallingimgreverse = false
+		</script>
+		<script>
+			vmin = 2
+			vmax = 5
+
+			function floatingimage() {
+				floating1 = new chip("floating1")
+				floating2 = new chip("floating2")
+
+				movechip("floating1")
+				movechip("floating2")
+			}
+		</script>
+	</head>
+
+	<body>
+		<script src="/core/script.js"></script>
+
+		<div data-i="bg_1" class="bgx blscroll dur40"></div>
+		<div id="circletext" class="blacktext"></div>
+		<div id="floating1">
+			<img data-i="img_4">
+		</div>
+		<div id="floating2">
+			<img data-i="img_5">
+		</div>	
+		<a href="/index.html">
+			<div class="returntr"></div>
+		</a>
+	</body>
+</html>
