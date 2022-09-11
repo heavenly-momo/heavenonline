@@ -357,28 +357,6 @@ if (iscore) {
 
 wait(loadsharedstyle)
 
-/*
-	If the page is set to be indexed by search engines,
-	send Analytics data.
-*/
-
-if (document.querySelector('meta[name="robots"]').content.startsWith("index")) {
-	console.log("Sending Analytics data...")
-	
-	gscript = document.createElement("script")
-	gscript.setAttribute("async", "")
-	gscript.setAttribute("src", "https://www.googletagmanager.com/gtag/js?id=G-FNFR7SP85Y")
-	document.head.appendChild(gscript)
-
-	window.dataLayer = window.dataLayer || []
-	gtag("js", new Date())
-	gtag("config", "G-FNFR7SP85Y")
-
-	function gtag() {
-		dataLayer.push(arguments)
-	}
-}
-
 function loadsharedstyle() {
 	queue = $("link").length
 	
