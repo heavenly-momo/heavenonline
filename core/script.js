@@ -1113,7 +1113,11 @@ function stage2() {
 		}
 
 		if (colorname == shadowcolor) {
-			$(".shadow").css("text-shadow", `0 0.5em 0.6em ${colorhex}`)
+			addstyle(
+				`.shadow {
+					text-shadow: 0 0.5em 0.6em ${colorhex};
+				}`
+			)
 		}
 		
 		if (colorname == groovycolor1) {
