@@ -8,6 +8,16 @@
   // Configure how much snow should drop down before fading ("windowheight" or "pageheight")
   var snowdistance = "windowheight";
 
+/*
+	i (momo) added this so that the falling images can be set to the background.
+*/
+
+if (fallingimgbg) {
+	fallingimgpos = "fixed"
+} else {
+	fallingimgpos = "absolute"
+}
+
 ///////////Stop Config//////////////////////////////////
 
   var dx, xp, yp;    // coordinate and position variables
@@ -31,7 +41,7 @@
     stx[i] = 0.02 + Math.random()/10; // set step variables
     sty[i] = 0.7 + Math.random();     // set step variables
 
-	$("body").append("<div id=\"fallingimg"+ i +"\" style=\"POSITION: absolute; Z-INDEX: -900; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><img src='"+snowsrc+"' border=\"0\"><\/div>");
+	$("body").append("<div id=\"fallingimg"+ i +`\" style="POSITION: ${fallingimgpos}; Z-INDEX: -900; VISIBILITY: visible; TOP: 15px; LEFT: 15px;"><img src='`+snowsrc+"' border=\"0\"><\/div>");
   }
 
   function snowIE_NS6() {
