@@ -78,6 +78,12 @@ groovydark2 = true
 shadow = ""
 boxshadow = "black"
 
+/*
+	Whether or not to block tabbing. If the site is exploration-based, you should enable this to avoid cheating.
+*/
+
+antitab = false
+
 /***************************************************************
 Dummy-proof settings end here. Be careful editing.
 ***************************************************************/
@@ -231,6 +237,18 @@ if (iscore) {
 	document.title = coretitle
 } else {
 	document.title = site.slice(10)
+}
+
+/*
+	If set to, automatically detect the use of tab and redirect to a page explaining this; no cheating!
+*/
+
+if (antitab) {
+	document.addEventListener("keydown", (event)=> {
+		if (event.key == "Tab") {
+			window.location.replace("/tab.html")
+		}
+	})
 }
 
 /*
