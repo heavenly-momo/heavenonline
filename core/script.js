@@ -51,7 +51,6 @@ nohr = false
 nohranim = false
 nodiamonds = false
 noborder = false
-noboxshadow = false
 
 color1 = "lightgray"
 color2 = "red"
