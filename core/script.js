@@ -536,7 +536,9 @@ function stage1() {
 		},
 		250)
 	} else {
-		seticon(1)
+		if (!iscore) {
+			seticon(1)
+		}
 	}
 
 	/*
