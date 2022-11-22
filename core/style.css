@@ -12,6 +12,10 @@
 	src: url(/core/font.woff);
 }
 
+html {
+	image-rendering: pixelated;
+}
+
 body,
 .popup,
 .tooltiptext,
