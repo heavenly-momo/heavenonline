@@ -927,7 +927,8 @@ function stage2() {
 
 	if (shadow.length) {
 		fontset.not(
-			`.noshadow,
+			`body,
+			.noshadow,
 			.shadowset`
 		).addClass(`${shadow}shadow shadowset`)
 	}
