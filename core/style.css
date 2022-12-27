@@ -826,6 +826,19 @@ hr,
 	}
 }
 
+.centerspin {
+	animation-name: centerspin;
+}
+
+@keyframes centerspin {
+	from {
+		transform: translate(-50%, -50%) rotate(0);
+	}
+	to {
+		transform: translate(-50%, -50%) rotate(360deg);
+	}
+}
+
 .hueshift {
 	animation-name: hueshift;
 }
