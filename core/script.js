@@ -123,6 +123,8 @@ if (page.endsWith(".html")) {
 	page = page.slice(1, -5)
 } else if (page.endsWith("/")) {
 	page = page.slice(1, -1)
+} else {
+	page = page.slice(1)
 }
 
 if (page == "") {
