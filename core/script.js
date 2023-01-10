@@ -426,6 +426,7 @@ function loadsharedscripts() {
 }
 
 function loadpagescript() {
+	queue = 1
 	pagescriptname = `/scripts/${page}.js`
 	
 	fileexists(pagescriptname, function(result) {
@@ -435,14 +436,16 @@ function loadpagescript() {
 			pagescript = document.createElement("script")	
 			pagescript.onload = function() {
 				console.log("Page script loaded.")
-				setcursor()
+				++counter
 			}
 			pagescript.setAttribute("src", pagescriptname)
 			document.head.appendChild(pagescript)
 		} else {
-			setcursor()
+			++counter
 		}
 	})
+	
+	wait(setcursor)
 }
 
 function setcursor() {
