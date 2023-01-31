@@ -208,6 +208,7 @@ body,
 
 .boxset.boximg {
 	padding: 0;
+	padding-bottom: 3px;
 }
 
 .boximg > .img,
@@ -215,6 +216,7 @@ body,
 .boximg > a > .img,
 .boximg > a > div {
 	box-shadow: 0 0 6px 6px rgba(0, 0, 0, 0.75) inset;
+	margin-bottom: -3px;
 }
 
 .tooltiptext {
