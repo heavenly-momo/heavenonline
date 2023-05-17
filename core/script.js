@@ -294,8 +294,8 @@ if (!ispreloaded) {
 }
 
 /*
-	If the browser both isn't Firefox
-	and is not a large scene page,
+	If the browser isn't Firefox
+	and it's not a large scene page,
 	begin automatic page scaling.
 */
 
@@ -561,6 +561,15 @@ function stage1() {
 			$(element).remove()
 		}
 	})
+
+	/*
+		If it's a large scene page, disable nearest filtering.
+	*/
+
+	if (islargescene) {
+		console.log("Page is large scene. Disabling nearest filtering.")	
+		$("body").addClass("linearfilter")
+	}
 
 	/*
 		Class-grouping and other misc. preparation.
