@@ -790,6 +790,14 @@ hr:last-child {
 }
 
 /*
+	For images that shouldn't be scaled via nearest filtering, typically ones in large-scene pages.
+*/
+
+.linearfilter {
+	image-rendering: auto;
+}
+
+/*
 	Any animations.
 */
 
