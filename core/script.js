@@ -300,7 +300,7 @@ if (!ispreloaded) {
 */
 
 if (islargescene) {
-	console.log("Page is large scene. Page will not auto-scale.")		
+	console.log("Page is large scene. Page will not auto-scale and nearest filtering is disabled.")
 } else if (isfirefox) {
 	console.log("Firefox detected. Page will not auto-scale.")		
 } else {
@@ -567,7 +567,6 @@ function stage1() {
 	*/
 
 	if (islargescene) {
-		console.log("Page is large scene. Disabling nearest filtering.")	
 		$("body").addClass("linearfilter")
 	}
 
