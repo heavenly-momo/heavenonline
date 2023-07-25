@@ -315,7 +315,7 @@ if (islargescene) {
 			zoom = width / 1920
 		}
 
-		document.body.style.zoom = zoom			
+		document.body.style.zoom = zoom
 	},
 	10)
 }
@@ -1764,9 +1764,8 @@ function stage2() {
 	}
 	
 	/*
-		There are two checks that should be performed only on
-		the index; checks for Firefox and mobile. If either
-		are detected, a dismissable warning should be presented,
+		If on the index and a mobile device is detected,
+		a dismissable warning should be presented,
 		as opposed to the IE check's hard lockout.
 	*/
 
@@ -1779,14 +1778,6 @@ function stage2() {
 				"mobile",
 				"A MOBILE DEVICE",
 				"REVISITING FROM A DESKTOP COMPUTER"
-			)
-		} else if (isfirefox) {
-			console.log("Firefox detected on index. Displaying warning...")
-
-			checkpopup(
-				"firefox",
-				"FIREFOX",
-				"USING A CHROMIUM-BASED BROWSER"
 			)
 		}
 
