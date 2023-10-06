@@ -77,6 +77,8 @@ groovydark2 = true
 shadow = ""
 boxshadow = "black"
 
+hroverride = false
+
 /*
 	Whether or not to block tabbing. If the site is exploration-based, you should enable this to avoid cheating.
 */
@@ -712,7 +714,7 @@ function stage1() {
 
 	if (hrlist.length) {
 		findimg("hr", function(result) {
-			if (result != "notfound") {
+			if (result != "notfound" && !hroverride) {
 				hrlist.css("background", `url(${result})`)
 			}
 
